@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http:8000/app_name/edit_data/{{k}}">edit</a>
+
+<h1>Edit page</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <input type="text" name="filename" value="{{a.imagename}}"><br>
+    <img src="{% static img %}" height="200px" width="200px">
+  <input type="file"  name="image"><br>
+  <input type="submit" value="update">
+</form>
+</body>
+</html>
